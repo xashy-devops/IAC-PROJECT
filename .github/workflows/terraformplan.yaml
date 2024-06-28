@@ -12,7 +12,7 @@ jobs:
             - name: setup up terraform
               uses: hashicorp/setup-terraform@v3
             - name: setup aws cli on the runner 
-              uses: aws-actions/configure-aws-credentials@v4
+              uses: aws-actions/configure-aws-credentials@v3
               with: 
                 aws-region: "us-east-1"
                 aws-access-key-id: ${{ secrets.access_key }}
