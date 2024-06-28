@@ -1,0 +1,23 @@
+name: terraform plan 
+on: 
+   pull_request:
+     branches:
+        - main
+jobs:
+    terraformplan:
+        runs-on: ubuntu-latest
+        steps:
+            - name: clone repo 
+              uses: actions@checkoutv3
+            - name: setup up terraform
+              uses: hashicorp/setup-terraform@v3
+            - name: setup aws cli on the runner 
+              uses: aws-actions/configure-aws-credentials@v4
+              with: 
+                aws-region: "us-east-1"
+                aws-access-key-id: ${{ secrets.access_key }}
+                aws-secret-access-key: ${{ secrets.secret_key }}
+            - name: init    
+              run: terraform init 
+            - name: plan
+              run: terarform plan   
