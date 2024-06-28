@@ -3,10 +3,10 @@ variable "cidr" {
   default = "10.0.0.0/16"
 }
 
-variable "access_key" {
+variable "ACCESS_KEY" {
   type = string
 }
 
-variable "secret_key" {
+variable "SECRET_KEY" {
   type = string
 }
