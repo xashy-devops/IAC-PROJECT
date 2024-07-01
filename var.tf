@@ -3,10 +3,11 @@ variable "cidr" {
   default = "10.0.0.0/16"
 }
 
-variable "ACCESS_KEY" {
+variable "AWS_ACCESS_KEY_ID" {
   type = string
 }
 
-variable "SECRET_KEY" {
+variable "AWS_SECRET_KEY_ID" {
   type = string
 }
+
